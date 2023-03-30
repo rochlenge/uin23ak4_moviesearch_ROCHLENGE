@@ -1,14 +1,23 @@
 import React from "react";
 
-function MovieCard({ title, year, poster, onSelectMovie }) {
+function MovieCard({ movie }) {
+  const { Title, Year, Genre, Director, Actors, Awards, Poster } = movie;
+  
   return (
-    <li className="movie-card" onClick={onSelectMovie}>
-      <img className="movie-poster" src={poster} alt={`${title} poster`} />
-      <div className="movie-info">
-        <h2 className="movie-title">{title}</h2>
-        <p className="movie-year">{year}</p>
-      </div>
-    </li>
+    <>
+      <img
+        src={Poster !== "N/A" ? Poster : "placeholder-image.jpg"}
+        alt={`${Title} poster`}
+      />
+      <h2>{Title}</h2>
+      <p>
+        År publisert: {Year} <br />
+        Sjanger: {Genre} <br />
+        Regissør: {Director} <br />
+        Skuespillere: {Actors} <br />
+        Priser: {Awards} <br />
+      </p>
+    </>
   );
 }
 

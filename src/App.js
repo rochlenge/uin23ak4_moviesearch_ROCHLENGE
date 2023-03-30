@@ -1,10 +1,11 @@
-import React from "react";
-import Layout from "./pages/Layout";
+import './css/main.scss';
+import Forside from './pages/Forside';
+import React from 'react';
 
 function App() {
   return (
-    <div>
-      <Layout />
+    <div className="App">
+      <Forside />
     </div>
   );
 }
